@@ -122,7 +122,7 @@ This represents a typical **embedded monitoring pipeline**:
 ## ADC Voltage Conversion
 
 ```
-Voltage = (ADC × 5) / 1023
+Voltage = (ADC × 5.0) / 1023.0
 ```
 
 ---
@@ -130,7 +130,7 @@ Voltage = (ADC × 5) / 1023
 ## Temperature Conversion
 
 ```
-Temperature = (Voltage − 0.5) × 100
+Temperature = (Voltage − 0.5) × 100.0
 ```
 
 ---
@@ -147,6 +147,14 @@ Where:
 Tmin = 10°C
 Tmax = 50°C
 N = 8 LEDs
+```
+
+LED Visualisation Example:
+```
+Temp = 15°C → ■□□□□□□□
+Temp = 25°C → ■■■□□□□□
+Temp = 35°C → ■■■■■□□□
+Temp = 45°C → ■■■■■■■□
 ```
 
 ---
@@ -180,6 +188,15 @@ System Response:
 - Remaining LEDs continue to represent temperature level  
 
 ---
+
+Visual Behavior:
+```
+Normal Condition
+■■■■■□□□
+
+Overheat Condition
+■■■■■■■▣ (blinking)
+```
 
 # 🧩 Software Structure
 
